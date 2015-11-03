@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
+    {% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png', true) }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+    {% do assets.addCss('theme://assets/css/main.css') %}
+    {% endblock %}
+    {{ assets.css() }}
+    {% endblock head%}
+</head>
+<body class="is-loading-0 is-loading-1 is-loading-2">
+
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Header -->
+        <header id="header">
+            <h1>{{ page.header.title }}</h1>
+            <p>{{ page.header.description }}</p>
+            <ul class="icons">
+                <li><a href={{ page.header.links.twitter }} class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href={{ page.header.links.instagram }} class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href={{ page.header.links.github }} class="icon fa-github"><span class="label">Github</span></a></li>
+                <li><a href={{ page.header.links.email }} class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
+        </header>
+
+        <!-- Thumbnail -->
+        <section id="thumbnails">
+            {% for image in page.header.images %}
+                <article>
+                    <a class="thumbnail" href={{ image.full }} data-position="left center"><img src={{ image.thumb }} alt="" /></a>
+                    <h2>{{ image.title }}</h2>
+                    <p>{{ image.text }}</p>
+                </article>
+            {% endfor %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; <a href={{ page.header.credits.url }}>{{ page.header.credits.text }} </a></li>
+                <li>Development: <a href="http://lab.dev-code.fr">Dev'Code </a></li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+
+    {% block javascripts %}
+    {% do assets.addJs('theme://assets/js/jquery.min.js') %}
+    {% do assets.addJs('theme://assets/js/skel.min.js') %}
+    {% do assets.addJs('theme://assets/js/main.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+</body>
+</html>
