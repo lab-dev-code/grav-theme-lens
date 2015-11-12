@@ -1,6 +1,7 @@
 # Lens
 
 [![Join the chat at https://gitter.im/lab-dev-code/grav-theme-lens](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/lab-dev-code/grav-theme-lens?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/178bd3fd-143f-4d2b-a7d6-699465647326/mini.png)](https://insight.sensiolabs.com/projects/178bd3fd-143f-4d2b-a7d6-699465647326)
 
 ![Lens](screenshot.jpg)
 
