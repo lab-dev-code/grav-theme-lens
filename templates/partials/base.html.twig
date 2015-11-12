@@ -39,7 +39,7 @@
         <section id="thumbnails">
             {% for image in page.header.images %}
                 <article>
-                    <a class="thumbnail" href={{ image.full }} data-position="left center"><img src={{ image.thumb }} alt="" /></a>
+                    {{('<a class="thumbnail" href="' ~ image.full ~ '" data-position="left center">')|absolute_url}}{{('<img src="' ~ image.thumb ~ '" alt="" />')|absolute_url}}</a>
                     <h2>{{ image.title }}</h2>
                     <p>{{ image.text }}</p>
                 </article>
@@ -49,7 +49,7 @@
         <!-- Footer -->
         <footer id="footer">
             <ul class="copyright">
-                <li>&copy; <a href={{ page.header.credits.url }}>{{ page.header.credits.text }} </a></li>
+                <li>&copy; {{ ('<a href="' ~ page.header.credits.url ~ '">')|absolute_url }}{{ page.header.credits.text }}</a></li>
                 <li>Development: <a href="http://lab.dev-code.fr">Dev'Code </a></li>
                 <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>

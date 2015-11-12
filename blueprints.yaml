@@ -1,5 +1,5 @@
 name: Lens
-version: 1.0.0
+version: 1.1.0
 description: "Just another fine responsive site template by HTML5 UP ported to Grav"
 icon: newspaper-o
 author:
@@ -7,7 +7,7 @@ author:
   email: lab.dev.code@gmail.com
   url: http://lab.dev-code.fr
 homepage: https://github.com/lab-dev-code/grav-theme-lens
-demo: http://lab.dev-code.fr/demos/grav-themes/lens
+demo: http://lab.dev-code.fr/grav-demos/grav-themes-lens
 keywords: lens, theme
 bugs: https://github.com/lab-dev-code/grav-theme-lens/issues
 license: CC-BY
