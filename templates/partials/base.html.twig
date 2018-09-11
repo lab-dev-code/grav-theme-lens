@@ -27,12 +27,14 @@
         <header id="header">
             <h1>{{ page.header.title }}</h1>
             <p>{{ page.header.description }}</p>
+            {% if (page.header.links.twitter or page.header.links.instagram or page.header.links.github or page.header.links.email) %}
             <ul class="icons">
-                <li><a href={{ page.header.links.twitter }} class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href={{ page.header.links.instagram }} class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href={{ page.header.links.github }} class="icon fa-github"><span class="label">Github</span></a></li>
-                <li><a href={{ page.header.links.email }} class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+                {% if page.header.links.twitter %}<li><a href={{ page.header.links.twitter }} class="icon fa-twitter"><span class="label">Twitter</span></a></li>{% endif %}
+                {% if page.header.links.instagram %}<li><a href={{ page.header.links.instagram }} class="icon fa-instagram"><span class="label">Instagram</span></a></li>{% endif %}
+                {% if page.header.links.github %}<li><a href={{ page.header.links.github }} class="icon fa-github"><span class="label">Github</span></a></li>{% endif %}
+                {% if page.header.links.email %}<li><a href={{ page.header.links.email }} class="icon fa-envelope-o"><span class="label">Email</span></a></li>{% endif %}
             </ul>
+            {% endif %}
         </header>
 
         <!-- Thumbnail -->
